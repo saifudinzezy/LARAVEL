@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get("/pintu-masuk", [TestController::class, 'pintuMasuk']);
 Route::get("products/{id}", "ProductController@show");
 Route::resource("categories", "CategoryController");
+Route::get('/php', function() {
+    return response()->json([
+     'stuff' => phpinfo()
+    ]);
+ });
