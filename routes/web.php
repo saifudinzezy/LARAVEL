@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get("/pintu-masuk", [TestController::class, 'pintuMasuk']);
+Route::get("products/{id}", "ProductController@show");
+Route::resource("categories", "CategoryController");
