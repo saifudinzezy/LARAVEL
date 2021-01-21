@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(["prefix" => "latihan"], function(){
+    Route::get("/kategori/all", [CategoryController::class, "index"]);
+    Route::get("/kategori/search", [CategoryController::class, "search"]);
+    Route::get("/kategori/{id}/delete", [CategoryController::class, "delete"]);
+    Route::get("/kategori/{id}/restore", [CategoryController::class, "restore"]);
+    Route::get("/kategori/{id}/permanent-delete", [CategoryController::class, "permanentDelete"]);
 });
