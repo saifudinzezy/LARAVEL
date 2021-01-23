@@ -24,4 +24,5 @@ Route::group(["prefix" => "latihan"], function(){
     Route::get("/kategori/{id}/delete", [CategoryController::class, "delete"]);
     Route::get("/kategori/{id}/restore", [CategoryController::class, "restore"]);
     Route::get("/kategori/{id}/permanent-delete", [CategoryController::class, "permanentDelete"]);
+    Route::view("layouts", "child");
 });
