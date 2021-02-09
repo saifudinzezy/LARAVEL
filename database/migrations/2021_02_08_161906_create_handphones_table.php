@@ -16,7 +16,7 @@ class CreateHandphonesTable extends Migration
         Schema::create('handphones', function (Blueprint $table) {
             $table->id();
             $table->string("phone_number")->unique();
-            $table->unsignedBigInteger("user_id")->unique();
+            $table->unsignedBigInteger("user_id");
             $table->timestamps();
 
             $table->foreign("user_id")->references("id")->on("users");
