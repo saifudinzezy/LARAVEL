@@ -9,7 +9,7 @@ class User extends Model
 {
     use HasFactory;
 
-    public function handphone(){
+    public function handphones(){
         //Agar relationship antara model User dan Handphone menjadi one-to-many maka kita tambahkan kode ini
         //di masing-masing model
         return $this->hasMany("App\Models\Handphone");
